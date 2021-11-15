@@ -9,6 +9,7 @@ t.create('GitHub LOC')
 
 t.create('GitLab LOC')
   .get('/lines/gitlab/tezos/tezos.json')
+  .timeout(15000)
   .expectBadge({ label: 'total lines', message: isMetric })
 
 t.create('GitHub LOC (with .com)')
@@ -17,6 +18,7 @@ t.create('GitHub LOC (with .com)')
 
 t.create('GitLab LOC (with .com)')
   .get('/lines/gitlab.com/tezos/tezos.json')
+  .timeout(15000)
   .expectBadge({ label: 'total lines', message: isMetric })
 
 t.create('BitBucket LOC')
